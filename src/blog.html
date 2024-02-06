@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="output.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog:</title>
+</head>
+<body class="text-slate-500 font-body">
+    <div class="grid md:grid-cols-3">
+        <div class="md:col-span-1 md:flex md:justify-end">
+            <nav>
+                <div>
+                    <h1 class="font-bold uppercase p-6 border-b border-slate-100">
+                        <a href="/" class="hover:text-slate-500">Corner</a>
+                    </h1>
+                </div>
+                <ul class="text-sm mt-6">
+                    <li class="py-1">
+                        <a href="index.html" class="px-4 flex justify-end border-r-4 border-primary">
+                            <span>home</span>
+                        </a>
+                    </li>
+                    <li class="py-1">
+                        <a href="about.html" class="px-4 flex justify-end border-r-4 border-primary">
+                            <span>about</span>
+                        </a>
+                    </li>
+                    <li class="py-1" >
+                        <a href="about.html" class="px-4 flex justify-end border-r-4 border-primary">
+                            <span>contact us</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div><!--end nav-->
+
+        <div id="banner" class="md:col-span-2">
+            <div class="h-72 bg-gray-200 bg-cover bg-center"></div>
+            <h1 class="font-bold w-full min-h-24 outline-none text-6xl pl-20 pt-10 pr-20 rounded resize-none border-none">Blog Title</h1>
+            <p class="font-light w-full mt-5 px-24 leading-9 outline-none rounded resize-none border-none text-2xl whitespace-pre text-wrap pb-6"><span>published at...</span></p>
+            <div id="article" class="font-semibold w-full mt-5 pl-20 outline-none rounded resize-none border-none text-2xl whitespace-pre text-wrap pb-6">hello</div>
+        </div>
+       
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="js/firebase.js"></script>
+    
+</body>
+</html>

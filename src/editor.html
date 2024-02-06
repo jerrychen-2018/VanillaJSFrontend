@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="output.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="banner" class="h-72 max-h-72 w-full relative bg-gray-300 bg-cover bg-center">
+        <input type="file", accept="image/*" id="banner-upload" hidden>
+        <label for="banner-upload" class="flex absolute bottom-5 right-5 size-10 rounded bg-slate-200 justify-center items-center cursor-pointer">
+            <img src="img/upload.png" alt="" class="w-5"></label>
+    </div>
+    <div class="w-screen min-w-96 block py-12 px-12">
+        <textarea id="title" type="text" class=" overflow-y-scroll font-bold w-full min-h-24 outline-none text-6xl pl-20 pt-10 pr-20 rounded resize-none border-none" placeholder="Blog title..."></textarea>
+        <textarea id="txtInput" type="text" class="overflow-hidden min-h-96 font-light w-full mt-5 px-24 leading-9 outline-none rounded resize-none border-none text-2xl whitespace-pre text-wrap pb-6" placeholder="Start writing here..."></textarea>
+        
+        <script type="text/javascript">
+            textarea = document.querySelector("#txtInput");
+            textarea.addEventListener('input', autoResize, false);
+            textarea.focus((e) => {
+                e.preventDefault();
+                e.target.focus({preventScroll: true});
+            })              
+
+            function autoResize() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight + 100)+ 'px';
+            }
+            function scrollLogToBottom() {
+                logTa = document.querySelector("#txtInput");
+                logTa.scrollTop = logTa.scrollHeight;
+            }
+        </script>
+
+        <div class="flex w-full fixed bottom-0 left-0 h-14 z-10 justify-center items-center"> 
+            <button id="publish-btn" class="px-3 py-2 m-2 text-white bg-slate-900 border-none outline-none cursor-pointer rounded-md">Publish</button>
+            <input type="file" accept="image/*" id="image-upload" hidden>
+            <label for="image-upload" class="px-3 py-2 m-2 bg-gray-200 rounded-md">Upload image</label>
+        </div>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-firestore.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-app.js" ></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="js/editor.js"></script>
+    <script src="js/firebase.js"></script>
+    
+</body>
+</html>
